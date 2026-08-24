@@ -220,27 +220,48 @@
 
           <!-- FORMULARIO -->
 
-          <form class="contact-form" action="#" method="post">
-            <!-- Campo nombre -->
-            <div class="form-group">
-              <label for="nombre"> Nombre </label>
+          <form class="contact-form" action="https://formspree.io/f/mdenrojd" method="POST">
+            <!-- CAMPO NOMBRE -->
 
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+
+              <input type="text" id="nombre" name="name" placeholder="Tu nombre" minlength="2" maxlength="50" autocomplete="name" required />
             </div>
 
-            <!-- Campo asunto -->
-            <div class="form-group">
-              <label for="asunto"> Asunto </label>
+            <!-- CAMPO EMAIL -->
 
-              <input type="text" id="asunto" name="asunto" placeholder="¿Sobre qué querés hablar?" required />
+            <div class="form-group">
+              <label for="email">Email</label>
+
+              <input type="email" id="email" name="email" placeholder="tu@email.com" maxlength="100" autocomplete="email" required />
             </div>
 
-            <!-- Campo mensaje -->
-            <div class="form-group">
-              <label for="mensaje"> Mensaje </label>
+            <!-- CAMPO ASUNTO -->
 
-              <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribí tu mensaje..." required></textarea>
+            <div class="form-group">
+              <label for="asunto">Asunto</label>
+
+              <input type="text" id="asunto" name="subject" placeholder="¿Sobre qué querés hablar?" minlength="3" maxlength="100" required />
             </div>
+
+            <!-- CAMPO MENSAJE -->
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+
+              <textarea id="mensaje" name="message" rows="6" minlength="10" maxlength="2000" placeholder="Escribí tu mensaje..." required></textarea>
+            </div>
+
+            <!-- PROTECCIÓN ANTI-BOT / HONEYPOT -->
+
+            <div class="honeypot" aria-hidden="true">
+              <label for="website">No completar este campo</label>
+
+              <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- BOTÓN ENVIAR -->
 
             <button type="submit" class="button button-primary">Enviar mensaje</button>
           </form>
